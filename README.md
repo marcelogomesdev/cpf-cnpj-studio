@@ -6,9 +6,9 @@ Aplicação web moderna e responsiva para gerar, validar e formatar CPF e CNPJ d
 
 Projeto desenvolvido com foco em prática de JavaScript, manipulação do DOM, algoritmos de validação, persistência de dados e desenvolvimento de interfaces responsivas.
 
-🚀 Acessar o projeto
+## 🚀 Acessar o projeto
 
-🔗 Abrir CPF & CNPJ Studio
+🌐 [Acessar CPF & CNPJ Studio](https://marcelogomesdev.github.io/cpf-cnpj-studio/)
 
 📸 Preview
 
