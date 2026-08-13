@@ -1,12 +1,16 @@
-# CPF & CNPJ Studio
+<p align="center"> <img src="images/banner.png" alt="CPF & CNPJ Studio" width="100%"> </p>
 
-Aplicação web moderna e responsiva para **gerar, validar e formatar CPF e CNPJ** diretamente no navegador, com histórico local, cópia rápida e suporte aos modos claro e escuro.
+CPF & CNPJ Studio
 
-> Projeto desenvolvido com foco em prática de **JavaScript**, manipulação do **DOM**, algoritmos de validação, persistência de dados e desenvolvimento de interfaces responsivas.
+Aplicação web moderna e responsiva para gerar, validar e formatar CPF e CNPJ diretamente no navegador, com histórico local, cópia rápida e suporte aos modos claro e escuro.
 
----
+Projeto desenvolvido com foco em prática de JavaScript, manipulação do DOM, algoritmos de validação, persistência de dados e desenvolvimento de interfaces responsivas.
 
-## 📸 Preview
+🚀 Acessar o projeto
+
+🔗 Abrir CPF & CNPJ Studio
+
+📸 Preview
 
 ![CPF & CNPJ Studio](images/cpf-cnpj-studio-home.PNG)
 
