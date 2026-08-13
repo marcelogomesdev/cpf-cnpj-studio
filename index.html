@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gere, valide, formate e copie CPFs e CNPJs válidos com histórico local e modo claro ou escuro.">
+  <meta name="theme-color" content="#0f172a">
+  <title>CPF & CNPJ Studio</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <header class="app-header">
+    <div class="container header-content">
+      <a class="brand" href="#" aria-label="CPF e CNPJ Studio — início">
+        <span class="brand-icon" aria-hidden="true">✓</span>
+        <span>
+          <strong>CPF & CNPJ</strong>
+          <small>Studio</small>
+        </span>
+      </a>
+
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Ativar modo escuro" title="Alternar tema">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content" class="container main-content">
+    <section class="hero" aria-labelledby="heroTitle">
+      <span class="eyebrow">Ferramenta gratuita para testes</span>
+      <h1 id="heroTitle">Gere e valide documentos brasileiros em segundos</h1>
+      <p>Crie CPFs e CNPJs matematicamente válidos, confira números existentes e mantenha seu histórico salvo apenas neste navegador.</p>
+    </section>
+
+    <section class="workspace" aria-label="Ferramentas de CPF e CNPJ">
+      <div class="tabs" role="tablist" aria-label="Escolha uma ferramenta">
+        <button class="tab active" id="generatorTab" type="button" role="tab" aria-selected="true" aria-controls="generatorPanel" data-tab="generatorPanel">Gerar</button>
+        <button class="tab" id="validatorTab" type="button" role="tab" aria-selected="false" aria-controls="validatorPanel" data-tab="validatorPanel">Validar</button>
+        <button class="tab" id="formatterTab" type="button" role="tab" aria-selected="false" aria-controls="formatterPanel" data-tab="formatterPanel">Formatar</button>
+      </div>
+
+      <div class="panel-wrap">
+        <section id="generatorPanel" class="tool-panel active" role="tabpanel" aria-labelledby="generatorTab">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Gerador</span>
+              <h2>Gerar documento válido</h2>
+            </div>
+            <span class="panel-badge">Dados fictícios</span>
+          </div>
+
+          <fieldset class="type-selector">
+            <legend>Tipo de documento</legend>
+            <label class="choice-card">
+              <input type="radio" name="generatorType" value="cpf" checked>
+              <span><strong>CPF</strong><small>11 dígitos</small></span>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="generatorType" value="cnpj">
+              <span><strong>CNPJ</strong><small>14 dígitos</small></span>
+            </label>
+          </fieldset>
+
+          <label class="switch-row" for="generatorFormatting">
+            <span><strong>Aplicar formatação</strong><small>Exibir pontos, barra e hífen</small></span>
+            <span class="switch"><input id="generatorFormatting" type="checkbox" checked><span aria-hidden="true"></span></span>
+          </label>
+
+          <div class="result-box" aria-live="polite">
+            <span id="generatorResultLabel">CPF gerado</span>
+            <output id="generatorResult">Clique em gerar</output>
+            <button id="copyGenerated" class="copy-button" type="button" disabled>Copiar</button>
+          </div>
+
+          <button id="generateButton" class="primary-button" type="button">Gerar CPF válido</button>
+        </section>
+
+        <section id="validatorPanel" class="tool-panel" role="tabpanel" aria-labelledby="validatorTab" hidden>
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Validador</span>
+              <h2>Validar CPF ou CNPJ</h2>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="documentInput">Digite o documento</label>
+            <div class="input-row">
+              <input id="documentInput" type="text" inputmode="numeric" autocomplete="off" maxlength="18" placeholder="CPF ou CNPJ, com ou sem formatação" aria-describedby="inputHelp">
+              <button id="clearInput" class="secondary-button compact" type="button">Limpar</button>
+            </div>
+            <small id="inputHelp">O tipo é identificado automaticamente pela quantidade de dígitos.</small>
+          </div>
+
+          <div id="validationResult" class="validation-result neutral" aria-live="polite">
+            <span class="validation-icon" aria-hidden="true">?</span>
+            <div><strong>Aguardando documento</strong><p>Digite 11 dígitos para CPF ou 14 para CNPJ.</p></div>
+          </div>
+
+          <button id="validateButton" class="primary-button" type="button">Validar documento</button>
+        </section>
+
+        <section id="formatterPanel" class="tool-panel" role="tabpanel" aria-labelledby="formatterTab" hidden>
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Formatador</span>
+              <h2>Aplicar ou remover formatação</h2>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="formatterInput">Documento</label>
+            <input id="formatterInput" type="text" inputmode="numeric" autocomplete="off" maxlength="18" placeholder="Digite um CPF ou CNPJ">
+          </div>
+
+          <div class="button-grid">
+            <button id="applyFormatting" class="primary-button" type="button">Aplicar formatação</button>
+            <button id="removeFormatting" class="secondary-button" type="button">Remover formatação</button>
+          </div>
+
+          <div class="result-box" aria-live="polite">
+            <span>Resultado</span>
+            <output id="formatterResult">Nenhum resultado</output>
+            <button id="copyFormatted" class="copy-button" type="button" disabled>Copiar</button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="history-section" aria-labelledby="historyTitle">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">Atividade local</span>
+          <h2 id="historyTitle">Histórico</h2>
+          <p>Gerações, validações e formatações ficam salvas somente neste dispositivo.</p>
+        </div>
+        <button id="clearHistory" class="danger-button" type="button" disabled>Limpar histórico</button>
+      </div>
+
+      <div id="historyList" class="history-list" aria-live="polite"></div>
+    </section>
+
+    <section class="info-card" aria-label="Aviso importante">
+      <span aria-hidden="true">i</span>
+      <div>
+        <strong>Uso responsável</strong>
+        <p>Os números gerados são apenas matematicamente válidos e devem ser utilizados em testes, estudos e desenvolvimento. Eles não comprovam identidade nem cadastro real.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <footer class="app-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <strong>CPF & CNPJ Studio</strong>
+        <span>Gere, valide e formate documentos brasileiros.</span>
+      </div>
+
+      <div class="footer-signature">
+        <p>Desenvolvido por <strong>Marcelo Gomes dev</strong></p>
+        <nav class="footer-links" aria-label="Links de Marcelo Gomes dev">
+          <a href="https://github.com/marcelogomesdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Marcelo Gomes dev">GitHub</a>
+          <span aria-hidden="true">•</span>
+          <a href="https://www.linkedin.com/in/marcelogomesdev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Marcelo Gomes dev">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
