@@ -36,13 +36,13 @@ Aplicação web moderna e responsiva para **gerar, validar e formatar CPF e CNPJ
 
 O sistema mantém um histórico das gerações, validações e formatações realizadas durante o uso.
 
-![Histórico do CPF & CNPJ Studio](images/cpf-cnpj-studio-history.png)
+![Histórico do CPF & CNPJ Studio](images/cpf-cnpj-studio-history.PNG)
 
 ### Modo claro
 
 Além da interface em modo escuro, o projeto também oferece um tema claro para adaptar a experiência de visualização.
 
-![CPF & CNPJ Studio - Modo Claro](images/cpf-cnpj-studio-claro.png)
+![CPF & CNPJ Studio - Modo Claro](images/cpf-cnpj-studio-claro.PNG)
 
 ---
 
