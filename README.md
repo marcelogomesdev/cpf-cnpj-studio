@@ -8,7 +8,7 @@ Aplicação web moderna e responsiva para **gerar, validar e formatar CPF e CNPJ
 
 ## 📸 Preview
 
-![CPF & CNPJ Studio](images/cpf-cnpj-studio-home.png)
+![CPF & CNPJ Studio](images/cpf-cnpj-studio-home.PNG)
 
 ---
 
